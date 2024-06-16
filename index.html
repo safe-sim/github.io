@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Controllable Safety-Critical Closed-loop Traffic Simulation via Guided Diffusion.">
+        content="SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Controllable Adversaries">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Controllable Safety-Critical Closed-loop Traffic Simulation via Guided Diffusion</title>
+  <title>SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Controllable Adversaries</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -99,7 +99,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-          Evaluating the performance of autonomous vehicle planning algorithms necessitates simulating long-tail traffic scenarios. Traditional methods for generating safety-critical scenarios often fall short in realism and controllability. Furthermore, these techniques generally neglect the dynamics of agent interactions. To mitigate these limitations, we introduce a novel closed-loop simulation framework rooted in guided diffusion models. Our approach yields two distinct advantages: 1) the generation of realistic long-tail scenarios that closely emulate real-world conditions, and 2) enhanced controllability, enabling more comprehensive and interactive evaluations. We achieve this through novel guidance objectives that enhance road progress while lowering collision and off-road rates. We develop a novel approach to simulate safety-critical scenarios through an adversarial term in the denoising process, which allows the adversarial agent to challenge a planner with plausible maneuvers, while all agents in the scene exhibit reactive and realistic behaviors. We validate our framework empirically using the NuScenes dataset, demonstrating improvements in both realism and controllability. These findings affirm that guided diffusion models provide a robust and versatile foundation for safety-critical, interactive traffic simulation, extending their utility across the broader landscape of autonomous driving.
+            Evaluating the performance of autonomous vehicle planning algorithms necessitates simulating long-tail safety-critical traffic scenarios. However, traditional methods for generating such scenarios often fall short in terms of controllability and realism, and neglect the dynamics of agent interactions. To mitigate these limitations, we introduce SAFE-SIM, a novel diffusion-based controllable closed-loop safety-critical simulation framework. Our approach yields two distinct advantages: 1) the generation of realistic long-tail safety-critical scenarios that closely emulate real-world conditions, and 2) enhanced controllability, enabling more comprehensive and interactive evaluations. We develop a novel approach to simulate safety-critical scenarios through an adversarial term in the denoising process, which allows an adversarial agent to challenge a planner with plausible maneuvers, while all agents in the scene exhibit reactive and realistic behaviors. Furthermore, we propose novel guidance objectives and a partial diffusion process that enables a user to control key aspects of the generated scenarios such as the collision type and aggressiveness of the adversarial driver while maintaining the realism of the behavior. We validate our framework empirically using the NuScenes dataset, demonstrating improvements in both realism and controllability. These findings affirm that diffusion models provide a robust and versatile foundation for safety-critical, interactive traffic simulation, extending their utility across the broader landscape of autonomous driving. 
         </div>
       </div>
     </div>
