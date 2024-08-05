@@ -5,8 +5,7 @@
   <meta name="description"
         content="SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Controllable Adversaries">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Controllable Adversaries</title>
-
+  <title>SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Diffusion-Controllable Adversaries</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
@@ -46,18 +45,18 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Controllable Adversaries</h1>
+            <h1 class="title is-1 publication-title">SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Diffusion-Controllable Adversaries</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <span>Wei-Jer Chang</span><sup>1</sup>,</span>
+                <span><a href="https://scholar.google.com/citations?user=tF-OmYgAAAAJ&hl=en">Wei-Jer Chang</span><sup>1</sup>,</span>
               <span class="author-block">
-                <span>Francesco Pittaluga</span><sup>2</sup>,</span>
+                <span><a href="https://www.francescopittaluga.com/"></span><sup>2</sup>,</span>
+              <span class="author-block"> 
+                <span><a href="https://me.berkeley.edu/people/masayoshi-tomizuka/"></a>Masayoshi Tomizuka</span><sup>1</sup>,</span>
               <span class="author-block">
-                <span>Masayoshi Tomizuka</span><sup>1</sup>,</span>
-              <span class="author-block">
-                <span>Wei Zhan</span><sup>1</sup>,</span>
-              <span class="author-block">
-                <span>Manmohan Chandraker</span><sup>2,3</sup>
+                <span<a href="https://zhanwei.site/"></span><sup>1</sup>,</span>
+              <span class="author-block">  
+                <span><a href="https://cseweb.ucsd.edu/~mkchan"></a>Manmohan Chandraker</span><sup>2,3</sup>
               </span>
             </div>
   
@@ -66,8 +65,7 @@
               <span class="author-block"><sup>2</sup>NEC Labs America,</span>
               <span class="author-block"><sup>3</sup>University of California San Diego</span>
           </div>
-      
-  
+    
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -80,6 +78,28 @@
                   </span>
                   <span>Paper</span>
                 </a>
+              <!-- Arxiv Link. -->
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2401.00391"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <!-- TODO modify to actual code in the future -->
+                <a href="https://safe-sim.github.io/" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
             </div>
           </div>
         </div>
@@ -99,7 +119,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Evaluating the performance of autonomous vehicle planning algorithms necessitates simulating long-tail safety-critical traffic scenarios. However, traditional methods for generating such scenarios often fall short in terms of controllability and realism, and neglect the dynamics of agent interactions. To mitigate these limitations, we introduce SAFE-SIM, a novel diffusion-based controllable closed-loop safety-critical simulation framework. Our approach yields two distinct advantages: 1) the generation of realistic long-tail safety-critical scenarios that closely emulate real-world conditions, and 2) enhanced controllability, enabling more comprehensive and interactive evaluations. We develop a novel approach to simulate safety-critical scenarios through an adversarial term in the denoising process, which allows an adversarial agent to challenge a planner with plausible maneuvers, while all agents in the scene exhibit reactive and realistic behaviors. Furthermore, we propose novel guidance objectives and a partial diffusion process that enables a user to control key aspects of the generated scenarios such as the collision type and aggressiveness of the adversarial driver while maintaining the realism of the behavior. We validate our framework empirically using the NuScenes dataset, demonstrating improvements in both realism and controllability. These findings affirm that diffusion models provide a robust and versatile foundation for safety-critical, interactive traffic simulation, extending their utility across the broader landscape of autonomous driving. 
+            Evaluating the performance of autonomous vehicle planning algorithms necessitates simulating long-tail safety-critical traffic scenarios. However, traditional methods for generating such scenarios often fall short in terms of controllability and realism; they also neglect the dynamics of agent interactions. To address these limitations, we introduce \safesim, a novel diffusion-based controllable closed-loop safety-critical simulation framework. Our approach yields two distinct advantages: 1) generating realistic long-tail safety-critical scenarios that closely reflect real-world conditions, and 2) providing controllable adversarial behavior for more comprehensive and interactive evaluations. We develop a novel approach to simulate safety-critical scenarios through an adversarial term in the denoising process of diffusion models, which allows an adversarial agent to challenge a planner with plausible maneuvers while all agents in the scene exhibit reactive and realistic behaviors. Furthermore, we propose novel guidance objectives and a partial diffusion process that enables users to control key aspects of the scenarios, such as the collision type and aggressiveness of the adversarial agent, while maintaining the realism of the behavior. We validate our framework empirically using the nuScenes and nuPlan datasets across multiple planners, demonstrating improvements in both realism and controllability. These findings affirm that diffusion models provide a robust and versatile foundation for safety-critical, interactive traffic simulation, extending their utility across the broader autonomous driving landscape. 
         </div>
       </div>
     </div>
@@ -122,6 +142,40 @@
 </section>
 
 
+<!-- TTC -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Controllability on Time-to-Collision (TTC)</h2>
+        <div class="columns is-vcentered">
+          <div class="column is-one-third has-text-centered">
+            <h3 class="title is-4">T-Bone</h3>
+            <video width="100%" controls>
+              <source src="./static/videos/TTC_scene-0638_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <h3 class="title is-4">Side</h3>
+            <video width="100%" controls>
+              <source src="./static/videos/TTC_scene-0638_2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <h3 class="title is-4">Front</h3>
+            <video width="100%" controls>
+              <source src="./static/videos/TTC_scene-0638_3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -136,10 +190,8 @@
   </div>
 </section>
 
-
 <footer class="footer">
   <div class="container">
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
@@ -150,8 +202,15 @@
         </div>
       </div>
     </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Contact<br>
+            For any questions, please contact Wei-Jer Chang at <a href="mailto:weijer_chang@berkeley.edu">weijer_chang@berkeley.edu</a>.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
-
-</body>
-</html>
