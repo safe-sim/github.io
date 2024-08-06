@@ -166,22 +166,22 @@ video {
 
 
 /* New CSS for reducing white space */
-.columns {
-  margin-bottom: 0.5rem; /* Remove bottom margin */
-  margin-top: 0.5rem;    /* Remove top margin */
-}
+/* .columns { */
+  /* margin-bottom: 0.5rem; Remove bottom margin */
+  /* margin-top: 0.5rem;    Remove top margin */
+/* } */
 
 /* Additional styling for the section to reduce gap */
 .section {
-  padding-top: 2rem;  /* Reduce top padding for sections */
+  padding-top: 1rem;  /* Reduce top padding for sections */
   padding-bottom: 0rem; /* Reduce bottom padding for sections */
   margin-bottom: 0rem; /* Adjust this value to control the space below the abstract section */
-  margin-top: 0rem;
+  margin-top: 0.5rem;
 }
 
 section.abstract-section {
   margin-bottom: 0rem; /* Adjust this value to control the space below the abstract section */
-  margin-top: -2rem;
+  margin-top: -3.5rem;
 }
 section.video-section {
   margin-bottom: -2.5rem; /* Adjust this value to control the space above the video section */
