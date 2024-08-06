@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Controllable Adversaries">
+        content="SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Diffusion-Controllable Adversaries">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Diffusion-Controllable Adversaries</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -23,9 +23,7 @@
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
   </script>
-  <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
+  <script id="MathJax-script" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <!-- </script>
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script> -->
@@ -49,13 +47,12 @@
 </head>
 <body>
 
-
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Diffusion-Controllable Adversaries</h1>
+            <h1 class="title is-2 publication-title">SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Diffusion-Controllable Adversaries</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=tF-OmYgAAAAJ&hl=en">Wei-Jer Chang</a><sup>1</sup>,
@@ -114,6 +111,10 @@
                   <span>Code</span>
                   </a>
               </span>
+              <!-- Icon and ECCV 2024 text -->
+              <div class="icon-container">
+                <span class="icon-text">ECCV 2024</span>
+              </div>
             </div>
           </div>
         </div>
@@ -122,41 +123,38 @@
   </div>
 </section>
 
-
-
-
-<section class="section">
+<section class="section abstract-section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          
           <p>
             Evaluating the performance of autonomous vehicle planning algorithms 
             necessitates simulating long-tail safety-critical traffic scenarios. 
             However, traditional methods for generating such scenarios often fall short in terms of controllability and
-             realism; they also neglect the dynamics of agent interactions. To address these limitations, we introduce SAFE-SIM, a novel diffusion-based controllable closed-loop safety-critical simulation framework. Our approach yields two distinct advantages: 1) generating realistic long-tail safety-critical scenarios that closely reflect real-world conditions, and 2) providing controllable adversarial behavior for more comprehensive and interactive evaluations. We develop a novel approach to simulate safety-critical scenarios through an adversarial term in the denoising process of diffusion models, which allows an adversarial agent to challenge a planner with plausible maneuvers while all agents in the scene exhibit reactive and realistic behaviors. Furthermore, we propose novel guidance objectives and a partial diffusion process that enables users to control key aspects of the scenarios, such as the collision type and aggressiveness of the adversarial agent, while maintaining the realism of the behavior. We validate our framework empirically using the nuScenes and nuPlan datasets across multiple planners, demonstrating improvements in both realism and controllability. These findings affirm that diffusion models provide a robust and versatile foundation for safety-critical, interactive traffic simulation, extending their utility across the broader autonomous driving landscape. 
+            realism; they also neglect the dynamics of agent interactions. To address these limitations, we introduce SAFE-SIM, a novel diffusion-based controllable closed-loop safety-critical simulation framework. Our approach yields two distinct advantages: 1) generating realistic long-tail safety-critical scenarios that closely reflect real-world conditions, and 2) providing controllable adversarial behavior for more comprehensive and interactive evaluations. We develop a novel approach to simulate safety-critical scenarios through an adversarial term in the denoising process of diffusion models, which allows an adversarial agent to challenge a planner with plausible maneuvers while all agents in the scene exhibit reactive and realistic behaviors. Furthermore, we propose novel guidance objectives and a partial diffusion process that enables users to control key aspects of the scenarios, such as the collision type and aggressiveness of the adversarial agent, while maintaining the realism of the behavior. We validate our framework empirically using the nuScenes and nuPlan datasets across multiple planners, demonstrating improvements in both realism and controllability. These findings affirm that diffusion models provide a robust and versatile foundation for safety-critical, interactive traffic simulation, extending their utility across the broader autonomous driving landscape. 
+          </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- Paper video. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-3">Video</h2>
-      <div class="publication-video">
-        <video controls width="800" height="600">
-          <source src="./static/videos/safe_sim.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+  </div>
+</section>
+<section class="section video-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <video controls width="800" height="600">
+            <source src="./static/videos/safe_sim.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   </div>
-
 </section>
 <!-- Overall Framework -->
 <section class="section">
@@ -365,7 +363,7 @@
 
      <div class="columns is-centered has-text-centered">
       <div class="column is-full-width" style="position: relative;">
-        <img src="static/images/legend.png" alt="Legend" style="position: absolute; top: 60px; right: 25px; width: 300px; margin-top: 10px;">
+        <img src="static/images/legend.png" alt="Legend" style="position: absolute; top: 60px; right: 25px; width: 300px; margin-top: 30px;">
       </div>
     </div>
 
@@ -554,6 +552,7 @@
  <!--  -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
+    <div class="is-full-width"></div>
     <h2 class="title">BibTeX</h2>
     <pre><code>@misc{chang2023controllable,
       title={Controllable Safety-Critical Closed-loop Traffic Simulation via Guided Diffusion}, 
