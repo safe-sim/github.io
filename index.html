@@ -19,6 +19,16 @@
 
     gtag('config', 'G-PYVRSFMDRL');
   </script>
+  <!-- MATHJAX -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <!-- </script>
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -48,15 +58,19 @@
             <h1 class="title is-1 publication-title">SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Diffusion-Controllable Adversaries</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <span><a href="https://scholar.google.com/citations?user=tF-OmYgAAAAJ&hl=en">Wei-Jer Chang</span><sup>1</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=tF-OmYgAAAAJ&hl=en">Wei-Jer Chang</a><sup>1</sup>,
+              </span>
               <span class="author-block">
-                <span><a href="https://www.francescopittaluga.com/"></span><sup>2</sup>,</span>
-              <span class="author-block"> 
-                <span><a href="https://me.berkeley.edu/people/masayoshi-tomizuka/"></a>Masayoshi Tomizuka</span><sup>1</sup>,</span>
+                <a href="https://www.francescopittaluga.com/">Francesco Pittaluga</a><sup>2</sup>,
+              </span>
               <span class="author-block">
-                <span<a href="https://zhanwei.site/"></span><sup>1</sup>,</span>
-              <span class="author-block">  
-                <span><a href="https://cseweb.ucsd.edu/~mkchan"></a>Manmohan Chandraker</span><sup>2,3</sup>
+                <a href="https://me.berkeley.edu/people/masayoshi-tomizuka/">Masayoshi Tomizuka</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://zhanwei.site/">Wei Zhan</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://cseweb.ucsd.edu/~mkchan">Manmohan Chandraker</a><sup>2,3</sup>
               </span>
             </div>
   
@@ -115,11 +129,15 @@
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full-width">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
+          
           <p>
-            Evaluating the performance of autonomous vehicle planning algorithms necessitates simulating long-tail safety-critical traffic scenarios. However, traditional methods for generating such scenarios often fall short in terms of controllability and realism; they also neglect the dynamics of agent interactions. To address these limitations, we introduce \safesim, a novel diffusion-based controllable closed-loop safety-critical simulation framework. Our approach yields two distinct advantages: 1) generating realistic long-tail safety-critical scenarios that closely reflect real-world conditions, and 2) providing controllable adversarial behavior for more comprehensive and interactive evaluations. We develop a novel approach to simulate safety-critical scenarios through an adversarial term in the denoising process of diffusion models, which allows an adversarial agent to challenge a planner with plausible maneuvers while all agents in the scene exhibit reactive and realistic behaviors. Furthermore, we propose novel guidance objectives and a partial diffusion process that enables users to control key aspects of the scenarios, such as the collision type and aggressiveness of the adversarial agent, while maintaining the realism of the behavior. We validate our framework empirically using the nuScenes and nuPlan datasets across multiple planners, demonstrating improvements in both realism and controllability. These findings affirm that diffusion models provide a robust and versatile foundation for safety-critical, interactive traffic simulation, extending their utility across the broader autonomous driving landscape. 
+            Evaluating the performance of autonomous vehicle planning algorithms 
+            necessitates simulating long-tail safety-critical traffic scenarios. 
+            However, traditional methods for generating such scenarios often fall short in terms of controllability and
+             realism; they also neglect the dynamics of agent interactions. To address these limitations, we introduce SAFE-SIM, a novel diffusion-based controllable closed-loop safety-critical simulation framework. Our approach yields two distinct advantages: 1) generating realistic long-tail safety-critical scenarios that closely reflect real-world conditions, and 2) providing controllable adversarial behavior for more comprehensive and interactive evaluations. We develop a novel approach to simulate safety-critical scenarios through an adversarial term in the denoising process of diffusion models, which allows an adversarial agent to challenge a planner with plausible maneuvers while all agents in the scene exhibit reactive and realistic behaviors. Furthermore, we propose novel guidance objectives and a partial diffusion process that enables users to control key aspects of the scenarios, such as the collision type and aggressiveness of the adversarial agent, while maintaining the realism of the behavior. We validate our framework empirically using the nuScenes and nuPlan datasets across multiple planners, demonstrating improvements in both realism and controllability. These findings affirm that diffusion models provide a robust and versatile foundation for safety-critical, interactive traffic simulation, extending their utility across the broader autonomous driving landscape. 
         </div>
       </div>
     </div>
@@ -128,10 +146,10 @@
     <!-- Paper video. -->
     <!-- Paper video. -->
   <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
+    <div class="column is-full-width">
       <h2 class="title is-3">Video</h2>
       <div class="publication-video">
-        <video controls width="560" height="315">
+        <video controls width="800" height="600">
           <source src="./static/videos/safe_sim.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -140,73 +158,395 @@
   </div>
 
 </section>
+<!-- Overall Framework -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overall Framework</h2>
+      </div>
+    </div>
+    <!-- Figure (PDF) -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <img src="./static/images/figure_1_overview_new.svg" alt="Figure" width="100%" height="500px" />
+      </div>
+    </div>
+    <!-- Text under the figure -->
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-full-width">
+        <div class="content">
+          <p>
+            SAFE-SIM evaluates a planner within scenarios featuring multiple controllable reactive agents. 
+            These agents have two distinct roles:adversarial agents, which actively challenge the planner by exhibiting
+             controllable adversarial behaviors such as specific collision types and levels of aggressiveness, and
+            non-adversarial agents, which follow normal driving behavior to maintain the realism of
+            the entire scene.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+<!-- Guidance Framework -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">How did we achieve this?</h2>
+      </div>
+    </div>
+    <!-- Figure (PDF) -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <img src="./static/images/fig2_Gudiance_framework.svg" alt="Figure" width="100%" height="500px" />
+      </div>
+    </div>
+    <!-- Text under the figure -->
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-full-width">
+        <div class="content">
+          <p>
+            With recent advances in trajectory diffusion models, we introduce a novel approach that incorporates an adversarial term 
+            in the denoising process. This allows an adv agent to challenge the planner with controllable adversarial behaviors. This process optimizes the adversarial agent’s trajectory 
+            using the adversarial cost function $ {J_{\text{adv}}} $ to influence the ego vehicle, while $J_{\text{reg}}$ is used for maintaining realism.
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <!-- TTC -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <!-- Figure (PDF) -->
+    <!-- Figure (PDF) -->
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <embed src="./static/figures/main_framework.pdf" type="application/pdf" width="100%" height="500px" />
+        <img src="./static/images/fig3_PD_framework.svg" alt="Figure" width="100%" height="500px" />
       </div>
-      <!-- Text under the figure -->
+    </div> -->
+    <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <div class="content has-text-justified">
+        <h2 class="title is-3">Controllability on Time-to-Collision (TTC)</h2>
+      </div>
+    </div>
+    <!-- Text under the figure -->
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-full-width">
+        <div class="content">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            By varying the level of \(J_{\text{control}}\), we are able to vary the adversarial behavior within the same scenario to challenge the planner.
           </p>
         </div>
       </div>
-
-      <!-- Legend and TTC Header and Bar -->
-      <div class="column is-full-width">
-        <img src="./static/images/legend.png" alt="Legend" width="200px" style="margin-bottom: 20px;">
-        <div class="columns is-vcentered has-text-centered">
-          <div class="column">
-            <h3 class="title is-5">TTC Low</h3>
-          </div>
-          <div class="column is-4">
-            <progress class="progress is-large" value="50" max="100" style="height: 5px;"></progress>
-          </div>
-          <div class="column">
-            <h3 class="title is-5">TTC High</h3>
-          </div>
-        </div>
+    </div>
+    <!-- Legend and TTC Header and Bar -->
+     <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width" style="position: relative;">
+        <img src="static/images/ttc_bar.png" alt="TTC Arrow" style="width: 100%; margin-bottom: 20px;">
+        <img src="static/images/legend.png" alt="Legend" style="position: absolute; top: -20px; right: 15px; width: 300px; margin-top: 10px;">
       </div>
+    </div>
 
-      <!-- Videos -->
-      <div class="column is-full-width">
-        <div class="columns is-vcentered">
-          <div class="column is-one-third has-text-centered">
-            <h3 class="title is-4">T-Bone</h3>
-            <video width="100%" controls>
-              <source src="./static/videos/TTC_scene-0638_1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="column is-one-third has-text-centered">
-            <h3 class="title is-4">Side</h3>
-            <video width="100%" controls>
-              <source src="./static/videos/TTC_scene-0638_2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="column is-one-third has-text-centered">
-            <h3 class="title is-4">Front</h3>
-            <video width="100%" controls>
-              <source src="./static/videos/TTC_scene-0638_3.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
+    <!-- Videos -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-one-third has-text-centered">
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/TTC_scene-0638_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-5">T-Bone</h3>
+      </div>
+      <div class="column is-one-third has-text-centered">
+        
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/TTC_scene-0638_2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-5">Side</h3>
+      </div>
+      <div class="column is-one-third has-text-centered">
+       
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/TTC_scene-0638_3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-5">Front</h3>
+      </div>
+    </div>
+    <!-- Separator -->
+    <hr>
+    <!-- Videos 2 -->
+    <!-- Legend and TTC Header and Bar -->
+     <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width" style="position: relative;">
+        <img src="static/images/ttc_bar.png" alt="TTC Arrow" style="width: 100%; margin-bottom: 20px;">
+        <img src="static/images/legend.png" alt="Legend" style="position: absolute; top: -20px; right: 15px; width: 300px; margin-top: 10px;">
+      </div>
+    </div> -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-one-third has-text-centered">
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/TTC_scene-0904_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-5">T-Bone</h3>
+      </div>
+      <div class="column is-one-third has-text-centered">
+        
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/TTC_scene-0904_2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-5">Side</h3>
+      </div>
+      <div class="column is-one-third has-text-centered">
+       
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/TTC_scene-0904_3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-5">Front</h3>
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- Partial Diffusion -->
+
+  <div class="container is-max-desktop">
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Partial Diffusion: User Control Flexibility</h2>
+        </div>
+      </div>
+    <!-- Figure (PDF) -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <img src="./static/images/pd_illustration.svg" alt="Figure" width="100%" height="500px" />
+      </div>
+    </div>
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-full-width">
+        <div class="content">
+          <p>
+            Partial Diffusion process enables users to control key aspects of the scenarios. 
+            During the denoising process, instead of starting from pure noise, we begin with trajectories specified by humans or heuristics 
+            to incorporate human knowledge. Noise is then added and subsequently denoised. 
+            Users can adjust noise levels to balance between user control and the model’s data distribution.
+            We generate proposals based on domain knowledge, such as collision types.
+          </p>
+        </div>
+      </div>
+    </div>
+
+      <div class="column is-full-width">
+        <img src="./static/images/fig3_PD_framework.svg" alt="Figure" width="100%" height="500px" />
+      </div>
+    </div>
+
+    <!-- Text under the figure -->
+    
+    <!-- Legend and TTC Header and Bar -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3.5"> Partial Diffusion: Control Collision Types</h2>
+        </div>
+      </div>
+
+     <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width" style="position: relative;">
+        <img src="static/images/legend.png" alt="Legend" style="position: absolute; top: -10px; right: 15px; width: 300px; margin-top: 10px;">
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-full-width">
+        <div class="content">
+          <p>
+            Base on different trajectory proposals, we can control the collision types in the scene.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Videos -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-one-third has-text-centered">
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/PD_scene-0096_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-4">T-Bone</h3>
+      </div>
+      <div class="column is-one-third has-text-centered">
+        
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/PD_scene-0096_2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-4">Side</h3>
+      </div>
+      <div class="column is-one-third has-text-centered">
+       
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/PD_scene-0096_3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-4">Front</h3>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-full-width">
+        <div class="content">
+          <p>
+            We can also control the distance to conflict point to generate different interactive scenarios for the planner evaluation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3.5"> Partial Diffusion: Control Distance to Conflict Point</h2>
+        </div>
+      </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-one-third has-text-centered">
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/PD_scene-0561_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-4">T-Bone</h3>
+      </div>
+      <div class="column is-one-third has-text-centered">
+        
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/PD_scene-0561_2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-4">Side</h3>
+      </div>
+      <div class="column is-one-third has-text-centered">
+       
+        <video width="100%" autoplay loop muted>
+          <source src="./static/videos/PD_scene-0561_3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-4">Front</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE1 -->
+ <!-- Safety-critical Traffic Simulation Table Section -->
+<!-- Safety-critical Traffic Simulation Table Section -->
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Evaluation: Safety-critical Traffic Simulation</h2>
+      </div>
+    </div>
+
+     <div class="columns is-centered has-text-justified">
+      <div class="column is-full-width">
+        <p class="caption">
+          We compare our approach against STRIVE and DiffScene for safety-critical traffic simulation with a rule-based planner. 
+          SAFE-SIM outperforms STRIVE on all metrics and demonstrates higher collision rates and better realism than DiffScene.
+        </p>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Dataset</th>
+              <th>Method</th>
+              <th>Collision<br> (%) &uarr;</th>
+              <th>Other<br>Offroad<br> (%) &darr;</th>
+              <th>Adv<br>Offroad <br> (%) &darr;</th>
+              <th>Collision<br>Rel Speed<br> (m/s) &darr;</th>
+              <th>Realism<br> &darr;</th>
+              <th>Time<br> (s) &darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="3" class="is-vcentered">nuScenes</td>
+              <td class="is-vcentered">SAFE-SIM</td>
+              <td class="is-vcentered"><b>43.2</b></td>
+              <td class="is-vcentered"><b>1.8</b></td>
+              <td class="is-vcentered">11.4</td>
+              <td class="is-vcentered"><b>-0.12</b></td>
+              <td class="is-vcentered"><b>0.38</b></td>
+              <td class="is-vcentered"><b>104.5 &plusmn; 17.7</b></td>
+            </tr>
+            <tr>
+              <td class="is-vcentered">STRIVE</td>
+              <td class="is-vcentered">36.4</td>
+              <td class="is-vcentered">2.2</td>
+              <td class="is-vcentered">11.4</td>
+              <td class="is-vcentered">5.52</td>
+              <td class="is-vcentered">0.85</td>
+              <td class="is-vcentered">427.2 &plusmn; 169.8</td>
+            </tr>
+            <tr>
+              <td class="is-vcentered">DiffScene</td>
+              <td class="is-vcentered">18.2</td>
+              <td class="is-vcentered">11.4</td>
+              <td class="is-vcentered"><b>9.0</b></td>
+              <td class="is-vcentered">16.4</td>
+              <td class="is-vcentered">0.52</td>
+              <td class="is-vcentered">105.4 &plusmn; 22.5</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="is-vcentered">nuPlan</td>
+              <td class="is-vcentered">SAFE-SIM</td>
+              <td class="is-vcentered"><b>80</b></td>
+              <td class="is-vcentered"><b>9.4</b></td>
+              <td class="is-vcentered">11.7</td>
+              <td class="is-vcentered">6.75</td>
+              <td class="is-vcentered"><b>0.27</b></td>
+              <td class="is-vcentered"><b>173.4 &plusmn; 73.3</b></td>
+            </tr>
+            <tr>
+              <td class="is-vcentered">DiffScene</td>
+              <td class="is-vcentered">56.7</td>
+              <td class="is-vcentered">14.0</td>
+              <td class="is-vcentered"><b>5.0</b></td>
+              <td class="is-vcentered"><b>-2.81</b></td>
+              <td class="is-vcentered">0.42</td>
+              <td class="is-vcentered">176.7 &plusmn; 77.5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+   
+  </div>
+</section>
+
+<style>
+  .table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+</style> -->
+
+
+ <!--  -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -224,21 +564,12 @@
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            The template is borrowed from <a
-            href="https://github.com/nerfies/nerfies.github.io">source code</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
+      <div class="is-full-width">
         <div class="content">
           <p>
             Contact<br>
-            For any questions, please contact Wei-Jer Chang at <a href="mailto:weijer_chang@berkeley.edu">weijer_chang@berkeley.edu</a>.
+            For any questions, please contact Wei-Jer Chang at <a href="mailto:weijer_chang@berkeley.edu">weijer_chang@berkeley.edu</a>. <br>
+            The template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">source code</a>
           </p>
         </div>
       </div>
