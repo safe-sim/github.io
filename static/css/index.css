@@ -1,7 +1,15 @@
 body {
   font-family: 'Noto Sans', sans-serif; font-size: 18px;
-    transform: scale(0.8);
-    transform-origin: top left; /* Adjust as needed */
+
+}
+img {
+  max-width: 80%;  /* Adjust this percentage as needed */
+  height: auto;  /* Maintains the aspect ratio of the image */
+}
+
+video {
+  max-width: 90%; /* Ensures the video is not wider than its container */
+  height: auto;   /* Maintains aspect ratio */
 }
 
 
