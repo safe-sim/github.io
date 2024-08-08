@@ -113,12 +113,14 @@
                   </a>
               </span>
               <!-- Inference Code Announcement -->
-              <div class="announcement">
-                <p class="is-size-5">We will realease the inference code soon. Stay tuned!</p>
-              </div>
+             
               <!-- Icon and ECCV 2024 text -->
               <div class="icon-container">
                 <span class="icon-text">ECCV 2024</span>
+              </div>
+
+              <div class="announcement">
+                <p class="is-size-6">We will realease the inference code soon.</p>
               </div>
             </div>
           </div>
@@ -253,29 +255,30 @@
     </div>
 
     <!-- Videos -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-one-third has-text-centered">
-        <video width="100%" autoplay loop muted>
-          <source src="./static/videos/TTC_scene-0638_1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <h3 class="title is-5">T-Bone</h3>
-      </div>
-      <div class="column is-one-third has-text-centered">
-        
-        <video width="100%" autoplay loop muted>
-          <source src="./static/videos/TTC_scene-0638_2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <h3 class="title is-5">Side</h3>
-      </div>
-      <div class="column is-one-third has-text-centered">
-       
-        <video width="100%" autoplay loop muted>
-          <source src="./static/videos/TTC_scene-0638_3.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <h3 class="title is-5">Front</h3>
+    <!-- Synchronized Videos Section -->
+    <div class="video-section"> <!-- Add this class to group these videos for synchronization -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-one-third has-text-centered">
+          <video width="100%" autoplay loop muted>
+            <source src="./static/videos/TTC_scene-0638_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <h3 class="title is-5">T-Bone</h3>
+        </div>
+        <div class="column is-one-third has-text-centered">
+          <video width="100%" autoplay loop muted>
+            <source src="./static/videos/TTC_scene-0638_2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <h3 class="title is-5">Head-On</h3>
+        </div>
+        <div class="column is-one-third has-text-centered">
+          <video width="100%" autoplay loop muted>
+            <source src="./static/videos/TTC_scene-0638_3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <h3 class="title is-5">Front</h3>
+        </div>
       </div>
     </div>
     <!-- Separator -->
@@ -316,9 +319,7 @@
   </div>
 </section>
 
-
 <!-- Partial Diffusion -->
-
   <div class="container is-max-desktop">
 
     <div class="container is-max-desktop">
@@ -390,7 +391,7 @@
           <source src="./static/videos/PD_scene-0096_1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h3 class="title is-4">T-Bone</h3>
+        <h3 class="title is-5">Left-turn</h3>
       </div>
       <div class="column is-one-third has-text-centered">
         
@@ -398,7 +399,7 @@
           <source src="./static/videos/PD_scene-0096_2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h3 class="title is-4">Side</h3>
+        <h3 class="title is-5">Stright</h3>
       </div>
       <div class="column is-one-third has-text-centered">
        
@@ -406,7 +407,7 @@
           <source src="./static/videos/PD_scene-0096_3.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h3 class="title is-4">Front</h3>
+        <h3 class="title is-5">Right-turn</h3>
       </div>
     </div>
     <div class="columns is-centered has-text-justified">
@@ -430,7 +431,7 @@
           <source src="./static/videos/PD_scene-0561_1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h3 class="title is-4">T-Bone</h3>
+        <h3 class="title is-5">Pass</h3>
       </div>
       <div class="column is-one-third has-text-centered">
         
@@ -438,7 +439,7 @@
           <source src="./static/videos/PD_scene-0561_2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h3 class="title is-4">Side</h3>
+        <h3 class="title is-5">Merge Collision</h3>
       </div>
       <div class="column is-one-third has-text-centered">
        
@@ -446,7 +447,7 @@
           <source src="./static/videos/PD_scene-0561_3.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h3 class="title is-4">Front</h3>
+        <h3 class="title is-5">Front Collision</h3>
       </div>
     </div>
   </div>
@@ -579,13 +580,15 @@
   <div class="container is-max-desktop content">
     <div class="is-full-width"></div>
     <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{chang2023controllable,
-      title={Controllable Safety-Critical Closed-loop Traffic Simulation via Guided Diffusion}, 
+    <pre><code>@misc{chang2024safesimsafetycriticalclosedlooptraffic,
+      title={SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Diffusion-Controllable Adversaries}, 
       author={Wei-Jer Chang and Francesco Pittaluga and Masayoshi Tomizuka and Wei Zhan and Manmohan Chandraker},
-      year={2023},
+      year={2024},
       eprint={2401.00391},
       archivePrefix={arXiv},
-      primaryClass={cs.RO}
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2401.00391}, 
+}
 }</code></pre>
   </div>
 </section>

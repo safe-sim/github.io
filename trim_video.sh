@@ -18,7 +18,7 @@ trim_video() {
         local end_time=${end_times[$i]}
         local input_file=$(printf "$input_template" "$index")
         local output_file="${output_dir}/${base_name}_${index}.mp4"
-
+        echo "input ${input_file} ouput ${output_dir} "
         echo "Trimming ${input_file} to ${end_time} seconds"
         
         ffmpeg -ss 0 -i "$input_file" -t "$end_time" -c:v libx264 -c:a aac -strict -2 -y "$output_file"
@@ -26,10 +26,10 @@ trim_video() {
 }
 
 # Base file name
-base_name="TTC_scene-0904"
+base_name="PD_scene-0096"
 
 # List of end times
-end_times=(3.2 3.4 3.3)
+end_times=(6.15 5.09 5.48)
 
 # Trim the videos
 trim_video "$base_name" "${end_times[@]}"
