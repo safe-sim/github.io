@@ -187,3 +187,25 @@ section.abstract-section {
 section.video-section {
   margin-bottom: -2.5rem; /* Adjust this value to control the space above the video section */
 }
+
+.video-container video {
+  width: 100%;
+  display: block;
+}
+
+.video-container video::-webkit-media-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-container:hover video::-webkit-media-controls {
+  opacity: 1;
+}
+
+.video-container video::-webkit-media-controls-enclosure {
+  opacity: 0;
+}
+
+.video-container:hover video::-webkit-media-controls-enclosure {
+  opacity: 1;
+}
